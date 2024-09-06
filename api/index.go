@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"go-fiber-vercel/api/routes"
 	"net/http"
 
 	"github.com/gofiber/fiber/v2"
@@ -19,24 +20,10 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 func handler() http.HandlerFunc {
 	app := fiber.New()
 
-	app.Get("/v1", func(ctx *fiber.Ctx) error {
-		return ctx.JSON(fiber.Map{
-			"version": "v1",
-		})
-	})
-
-	app.Get("/v2", func(ctx *fiber.Ctx) error {
-		return ctx.JSON(fiber.Map{
-			"version": "v2",
-		})
-	})
-
-	app.Get("/", func(ctx *fiber.Ctx) error {
-		return ctx.JSON(fiber.Map{
-			"uri":  ctx.Request().URI().String(),
-			"path": ctx.Path(),
-		})
-	})
+	// menambahkan routing
+	routes.RootRoute(app)
+	routes.V1Route(app)
+	routes.V2Route(app)
 
 	return adaptor.FiberApp(app)
 }
