@@ -1,7 +1,7 @@
 package main
 
 import (
-	"go-fiber-vercel/api/routes"
+	"go-fiber-vercel/routes"
 	"log"
 	"os"
 

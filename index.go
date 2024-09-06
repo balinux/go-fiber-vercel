@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"go-fiber-vercel/api/routes"
+	"go-fiber-vercel/routes"
 	"net/http"
 
 	"github.com/gofiber/fiber/v2"

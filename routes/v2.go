@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"go-fiber-vercel/api/handlers"
+	"go-fiber-vercel/handlers"
 
 	"github.com/gofiber/fiber/v2"
 )
